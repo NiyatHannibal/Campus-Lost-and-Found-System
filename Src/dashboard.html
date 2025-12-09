@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard - Campus Lost & Found</title>
+    <link rel="stylesheet" href="style_main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Campus Lost & Found</h1>
+      <div class="nav-links">
+        <a href="#">Dashboard</a>
+        <a href="#" style="color: var(--accent-color)">Report Lost Item</a>
+        <a href="login_page.html">Logout</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <h2>Recent Found Items</h2>
+      <div class="item-grid" id="itemsContainer">
+        <!-- Static Item (Will be replaced by JS later) -->
+        <div class="item-card">
+          <img src="images/calculator.jpg" alt="Scientific Calculator" class="item-image">
+          <div class="card-content">
+          <h3>Scientific Calculator</h3>
+          <p>Location: <span class="badge">Engineering Library </span></p>
+          <p>Date: Dec 08, 2025</p>
+          <button
+            class="btn claim-btn"
+          >
+            Claim Item
+          </button>
+          </div>
+        </div>
+
+        <div class="item-card">
+          <img src="images/power_bank.jpg" alt="Power Bank" class="item-image">
+          <div class="card-content">
+            <h3>Blue Hoodie</h3>
+          <p>Location: <span class="badge">Teacher's Lounge</span></p>
+          <p>Date: Dec 07, 2025</p>
+          <button
+            class="btn claim-btn"
+          >
+            Claim Item
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
