@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login - Campus Lost & Found</title>
+    <link rel="stylesheet" href="style_main.css" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="login-card">
+        <h2 style="color: var(--primary-color)">Student Login</h2>
+        <p>Please sign in to report or claim items.</p>
+        <div class="form-group">
+          <input
+            type="text"
+            id="username"
+            placeholder="Student ID (e.g., ETS1234/13)"
+          />
+          <input type="password" id="password" placeholder="Password" />
+        </div>
+        <button class="btn" onclick="handleLogin()">Sign In</button>
+        <p
+          id="errorMsg"
+          style="color: red; font-size: 0.9rem; margin-top: 10px"
+        ></p>
+      </div>
+    </div>
+
+    <script src="appLogic.js"></script>
+  </body>
+</html>
