@@ -1,0 +1,34 @@
+{
+  "project": "AASTU Campus Lost and Found",
+  "version": "1.0",
+  "users": [
+    { "id": "ETS1234/12", "password": "123", "name": "Abebe Belachew" },
+    { "id": "admin", "password": "admin", "name": "System Admin" }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "title": "Scientific Calculator",
+      "location": "Engineering Library",
+      "date": "2025-12-08",
+      "image": "images/calculator.jpg",
+      "status": "found"
+    },
+    {
+      "id": 2,
+      "title": "Power Bank",
+      "location": "Teacher's Lounge",
+      "date": "2025-12-07",
+      "image": "images/power_bank.jpg",
+      "status": "found"
+    },
+    {
+      "id": 3,
+      "title": "Silver Water Bottle",
+      "location": "KK Yellow",
+      "date": "2025-12-09",
+      "image": "images/water_bottle.jpg",
+      "status": "found"
+    }
+  ]
+}
