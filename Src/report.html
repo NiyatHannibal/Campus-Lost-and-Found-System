@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Item - AASTU Lost & Found</title>
+    <link rel="stylesheet" href="style_main.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>AASTU Campus Lost & Found</h1>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#" class="active-link">Report Lost Item</a>
+            <a href="login_page.html">Logout</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="login-wrapper" style="height: auto; margin-top: 50px;">
+            <div class="login-card" style="width: 500px; text-align: left;">
+                <h2 style="color: var(--primary-color); text-align: center;">Report a Found Item</h2>
+                <p style="text-align: center; color: #666;">Help return items to their owners.</p>
+                
+                <div class="form-group">
+                    <label>Item Name</label>
+                    <input type="text" id="itemName" placeholder="e.g. Black HP Laptop">
+                    
+                    <label>Location Found</label>
+                    <input type="text" id="itemLocation" placeholder="e.g. Block 509, Room 2">
+                    
+                    <label>Date Found</label>
+                    <input type="date" id="itemDate">
+                    
+                    <label>Category</label>
+                    <select id="itemCategory" style="width: 100%; padding: 10px; margin: 10px 0;">
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Stationery">Stationery</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button class="btn" onclick="submitReport()">Submit Report</button>
+                <button class="btn" style="background-color: #ccc; margin-top: 10px;" onclick="window.location.href='dashboard.html'">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
