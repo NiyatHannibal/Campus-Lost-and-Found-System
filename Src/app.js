@@ -106,7 +106,7 @@ function loadDashboard() {
 
   if (!displayItems) {
     displayItems = db.items;
-    localStorage.setItem("lostItems", JSON.stringify(db.items));
+    localStorage.setItem("lostItems", JSON.stringify(displayItems));
   }  
 
   db.items.forEach((item) => {
