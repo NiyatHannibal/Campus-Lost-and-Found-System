@@ -106,10 +106,10 @@ function loadDashboard() {
 
   if (!displayItems) {
     displayItems = db.items;
-    localStorage.setItem("lostItems", JSON.stringify(displayItems));
+    localStorage.setItem("lostItems", JSON.stringify(db.items));
   }  
 
-  db.items.forEach((item) => {
+   displayItems.forEach((item) => {
     const cardHTML = `
         <div class="item-card">
             <img src="${item.image}" alt="${item.title}" class="item-image" onerror="this.src='https://via.placeholder.com/300'">
