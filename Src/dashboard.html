@@ -19,6 +19,11 @@
     </header>
 
     <div class="container">
+      <div style="margin-bottom: 20px; display: flex; gap: 10px;">
+          <input type="text" id="searchInput" placeholder="Search for items..." 
+                 onkeyup="filterItems()"
+                 style="padding: 12px; width: 100%; border: 1px solid #ddd; border-radius: 5px;">
+      </div>
       <h2>Recent Found Items</h2>
       <div class="item-grid" id="itemsContainer"></div>
       <script src="app.js"></script>

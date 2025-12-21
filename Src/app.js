@@ -130,6 +130,24 @@ function claimItem(id) {
   alert(`Claim Request sent for Item ID: ${id}. Visit the security office.`);
 }
 
+
+function filterItems() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const cards = document.getElementsByClassName('item-card');
+
+    for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].getElementsByTagName("h3")[0];
+        const txtValue = title.textContent || title.innerText;
+        
+        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM is fully loaded. Running script...");
   loadDashboard();
