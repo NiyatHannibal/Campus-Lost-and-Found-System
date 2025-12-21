@@ -54,6 +54,37 @@ function handleLogin() {
   }
 }
 
+function submitReport() {
+    const title = document.getElementById('itemName').value;
+    const location = document.getElementById('itemLocation').value;
+    const date = document.getElementById('itemDate').value;
+
+    if(title === "" || location === "") {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    const newItem = {
+        id: Date.now(), 
+        title: title,
+        location: location,
+        date: date,
+        image: "images/calculator.jpg", 
+        status: "Found"
+    };
+
+    let currentItems = JSON.parse(localStorage.getItem('lostItems'));
+    if (!currentItems) {
+        currentItems = db.items;
+    }
+
+    currentItems.push(newItem);
+    localStorage.setItem('lostItems', JSON.stringify(currentItems));
+
+    alert("Item Reported Successfully!");
+    window.location.href = "dashboard.html";
+}
+
 function loadDashboard() {
   console.log("2. loadDashboard function called.");
   const container = document.getElementById("itemsContainer");
@@ -70,8 +101,15 @@ function loadDashboard() {
   if (userDisplay) userDisplay.innerText = `Welcome, ${currentUser}`;
 
   container.innerHTML = "";
+  
+  let displayItems = JSON.parse(localStorage.getItem("lostItems"));
 
-  db.items.forEach((item) => {
+  if (!displayItems) {
+    displayItems = db.items;
+    localStorage.setItem("lostItems", JSON.stringify(db.items));
+  }  
+
+   displayItems.forEach((item) => {
     const cardHTML = `
         <div class="item-card">
             <img src="${item.image}" alt="${item.title}" class="item-image" onerror="this.src='https://via.placeholder.com/300'">
@@ -96,3 +134,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM is fully loaded. Running script...");
   loadDashboard();
 });
+
