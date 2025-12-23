@@ -2,29 +2,164 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Login - Campus Lost & Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - AASTU Lost & Found</title>
     <link rel="stylesheet" href="style_main.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .login-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        animation: fadeIn 0.8s ease-out;
+      }
+      .login-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 40px;
+        border-radius: 16px;
+        background: var(--white);
+        box-shadow: var(--hover-shadow);
+      }
+    </style>
   </head>
   <body>
-    <div class="login-wrapper">
+    <header>
+      <div>
+        <h1>AASTU Campus Lost & Found</h1>
+      </div>
+    </header>
+
+    <div class="login-container">
       <div class="login-card">
-        <h2 style="color: var(--primary-color)">Student Login</h2>
-        <p>Please sign in to report or claim items.</p>
+        <div style="text-align: center; margin-bottom: 25px">
+          <div
+            style="
+              width: 70px;
+              height: 70px;
+              background: var(--bg-color);
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 15px;
+              border: 2px solid var(--accent-color);
+            "
+          >
+            <svg
+              width="35"
+              height="35"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#003366"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h2 style="color: var(--primary-color); margin: 0">Student Login</h2>
+          <p style="color: #666; font-size: 0.95rem; margin-top: 5px">
+            Please sign in to continue
+          </p>
+        </div>
+
         <div class="form-group">
+          <label
+            style="
+              font-weight: 600;
+              color: var(--primary-color);
+              font-size: 0.9rem;
+              margin-left: 5px;
+            "
+            >Student ID</label
+          >
           <input
             type="text"
             id="username"
-            placeholder="Student ID (e.g., ETS1234/13)"
+            placeholder="e.g. ETS1234/12"
+            style="margin-top: 5px"
           />
-          <input type="password" id="password" placeholder="Password" />
+
+          <label
+            style="
+              font-weight: 600;
+              color: var(--primary-color);
+              font-size: 0.9rem;
+              margin-left: 5px;
+            "
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            style="margin-top: 5px"
+          />
         </div>
-        <button class="btn" onclick="handleLogin()">Sign In</button>
+
+        <button
+          class="btn"
+          onclick="handleLogin()"
+          style="margin-top: 20px; font-size: 1.1rem"
+        >
+          Sign In
+        </button>
+
         <p
           id="errorMsg"
-          style="color: red; font-size: 0.9rem; margin-top: 10px"
+          style="
+            color: #d9534f;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            text-align: center;
+            min-height: 20px;
+            font-weight: 500;
+          "
         ></p>
+
+        <div
+          style="
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+          "
+        >
+          <small style="color: #888"
+            >Forgot Password? Contact
+            <a
+              href="#"
+              style="
+                color: var(--primary-color);
+                text-decoration: none;
+                font-weight: 600;
+              "
+              >Campus Security</a
+            ></small
+          >
+        </div>
       </div>
     </div>
+    <footer>
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px">
+        <p>
+          &copy; 2025 AASTU Campus Lost & Found System. All rights reserved.
+        </p>
+        <p style="font-size: 0.8rem; margin-top: 10px">
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+          <a href="#">Contact Security</a>
+        </p>
+      </div>
+    </footer>
 
     <script src="app.js"></script>
   </body>

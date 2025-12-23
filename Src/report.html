@@ -1,53 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Report Item - AASTU Lost & Found</title>
-    <link rel="stylesheet" href="style_main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style_main.css" />
+  </head>
+  <body>
     <header>
-        <div>
-            <h1>AASTU Campus Lost & Found</h1>
-        </div>
-        <div class="nav-links">
-            <a href="dashboard.html">Dashboard</a>
-            <a href="#" class="active-link">Report Lost Item</a>
-            <a href="login_page.html">Logout</a>
-        </div>
+      <div>
+        <h1>AASTU Campus Lost & Found</h1>
+      </div>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="report.html" class="active">Report Lost Item</a>
+        <a href="login_page.html">Logout</a>
+      </div>
     </header>
 
     <div class="container">
-        <div class="login-wrapper" style="height: auto; margin-top: 50px;">
-            <div class="login-card" style="width: 500px; text-align: left;">
-                <h2 style="color: var(--primary-color); text-align: center;">Report a Found Item</h2>
-                <p style="text-align: center; color: #666;">Help return items to their owners.</p>
-                
-                <div class="form-group">
-                    <label>Item Name</label>
-                    <input type="text" id="itemName" placeholder="e.g. Black HP Laptop">
-                    
-                    <label>Location Found</label>
-                    <input type="text" id="itemLocation" placeholder="e.g. Block 509, Room 2">
-                    
-                    <label>Date Found</label>
-                    <input type="date" id="itemDate">
-                    
-                    <label>Category</label>
-                    <select id="itemCategory" style="width: 100%; padding: 10px; margin: 10px 0;">
-                        <option value="Electronics">Electronics</option>
-                        <option value="Clothing">Clothing</option>
-                        <option value="Stationery">Stationery</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
+      <div class="login-card" style="max-width: 600px; margin-top: 20px">
+        <h2
+          style="
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 5px;
+          "
+        >
+          Report a Found Item
+        </h2>
+        <p
+          style="
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 600;
+          "
+        >
+          Help return items to their owners by filling out the details below.
+        </p>
 
-                <button class="btn" onclick="submitReport()">Submit Report</button>
-                <button class="btn" style="background-color: #ccc; margin-top: 10px;" onclick="window.location.href='dashboard.html'">Cancel</button>
+        <div class="form-group">
+          <label style="font-weight: 600; color: var(--primary-color)"
+            >Item Name</label
+          >
+          <input type="text" id="itemName" placeholder="e.g. Black HP Laptop" />
+
+          <label style="font-weight: 600; color: var(--primary-color)"
+            >Upload Photo</label
+          >
+          <input
+            type="file"
+            id="itemImage"
+            accept="image/*"
+            onchange="previewImage(event)"
+            style="padding: 10px; background: #f9f9f9"
+          />
+          <img
+            id="preview"
+            src=""
+            style="
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              border-radius: 8px;
+              display: none;
+              margin-top: 10px;
+              border: 2px dashed #ccc;
+            "
+          />
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+            <div>
+              <label style="font-weight: 600; color: var(--primary-color)"
+                >Location Found</label
+              >
+              <input
+                type="text"
+                id="itemLocation"
+                placeholder="e.g. Block 509"
+              />
             </div>
+            <div>
+              <label style="font-weight: 600; color: var(--primary-color)"
+                >Date Found</label
+              >
+              <input type="date" id="itemDate" />
+            </div>
+          </div>
+
+          <label style="font-weight: 600; color: var(--primary-color)"
+            >Category</label
+          >
+          <select id="itemCategory">
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Stationery">Stationery</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
+
+        <div style="display: flex; gap: 15px; margin-top: 20px">
+          <button class="btn" onclick="window.location.href='dashboard.html'">
+            Cancel
+          </button>
+          <button class="btn" onclick="submitReport()">Submit Report</button>
+        </div>
+      </div>
     </div>
+    <footer>
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px">
+        <p>
+          &copy; 2025 AASTU Campus Lost & Found System. All rights reserved.
+        </p>
+        <p style="font-size: 0.8rem; margin-top: 10px">
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+          <a href="#">Contact Security</a>
+        </p>
+      </div>
+    </footer>
 
     <script src="app.js"></script>
-</body>
+
+    <script>
+      function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function () {
+          const output = document.getElementById("preview");
+          output.src = reader.result;
+          output.style.display = "block";
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    </script>
+  </body>
 </html>
