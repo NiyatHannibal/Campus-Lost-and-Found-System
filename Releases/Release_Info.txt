@@ -1,0 +1,16 @@
+OFFICIAL RELEASE ARTIFACTS
+
+This folder serves as a reference for official project releases.
+
+In accordance with Software Configuration Management (SCM) best practices,
+large source code archives and release packages are not stored directly
+inside the repository. Instead, official releases are managed using
+GitHub’s built-in "Releases" feature to maintain a clean and lightweight repository.
+
+The officially packaged source code archives for this project can be found here:
+https://github.com/NiyatHannibal/Campus-Lost-and-Found-System/releases
+
+Associated Git Tags and Baselines:
+- BL1 : Initial project setup and SCM structure
+- BL2 : Functional prototype baseline
+- v1.1 : Final stable release including approved change requests

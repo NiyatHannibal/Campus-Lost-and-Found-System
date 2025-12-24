@@ -72,7 +72,7 @@ function handleLogin() {
     localStorage.setItem("currentUser", userFound.name);
     window.location.href = "dashboard.html";
   } else {
-    errorMsg.innerText = "Invalid ID or Password. Try 'ETS1234/12' / '123'";
+    errorMsg.innerText = "Invalid ID or Password.";
   }
 }
 
@@ -216,7 +216,7 @@ function submitReport() {
 
 function claimItem(id) {
   showNotification(
-    `Claim Request Sent for Item #${id}! Please visit Block 509.`
+    `Claim Request Sent for Item #${id}! Please visit Block 59.`
   );
 }
 
