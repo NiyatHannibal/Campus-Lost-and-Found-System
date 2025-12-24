@@ -314,3 +314,38 @@ footer a:hover {
     transform: translateX(0);
   }
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 15px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; 
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .login-card {
+    padding: 20px; 
+  }
+  
+  .pagination-container {
+      gap: 10px;
+  }
+  .page-btn {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+  }
+}
